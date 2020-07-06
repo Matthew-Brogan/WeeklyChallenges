@@ -7,12 +7,21 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            string alphabits = "abcdefghijklmnopqrstuvwxyz";
+            if (alphabits.Contains(c))
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            if(vals.Length % 2 == 0)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         public bool IsNumberEven(int number)
