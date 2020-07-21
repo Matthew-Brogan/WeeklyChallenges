@@ -10,7 +10,10 @@ namespace ChallengesWithTestsMark8
             {
                 return true;
             }
-            else { return false; }
+            else 
+            {
+                return false; 
+            }
         }
 
         public double Subtract(double minuend, double subtrahend)
@@ -29,7 +32,10 @@ namespace ChallengesWithTestsMark8
             {
                 return number1;
             }
-            else { return number2; }
+            else 
+            {
+                return number2;
+            }
         }
 
         public long Multiply(long factor1, long factor2)

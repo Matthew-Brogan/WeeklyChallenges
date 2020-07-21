@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,68 +12,119 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            if (vals.Length == 0)
+
+            if (vals.Contains(false))
+            {
+                return true;
+            } 
+            else
             {
                 return false;
             }
-            else
-            {
                 
-                foreach (bool b in vals)
-                {
-                    if (b == false)
-                    {
-                        bool c = true;
-                       
-                    }
-                    else
-                    {
-                        bool c = false;
-                        
-                    }
-                    
-                }
-            }
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
+           
+            if(numbers == null)
+            {
+                return false;
+            }
+            else if (numbers.Where(x => x % 2 != 0).Sum()%2!=0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            throw new NotImplementedException();
+            var digiCount = 0;
+            var lowCount = 0;
+            var upCount = 0;
+
+
+            foreach(var c in password)
+            {
+                
+                if(char.IsDigit(c))
+                {
+                    digiCount++;
+                }
+                else if (char.IsLower(c))
+                {
+                    lowCount++;
+                }
+                else if (char.IsUpper(c))
+                {
+                    upCount++;
+                }
+            }
+            if(digiCount >= 1 && lowCount >= 1 && upCount >= 1)
+            {
+                return true;
+            }
+            else { return false; }
+                
+         
+            
+            
         }
 
         public char GetFirstLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            return val[0];
         }
 
         public char GetLastLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            var x = val.Length;
+            return val[x - 1];
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            if(dividend == 0 || divisor == 0)
+            {
+                return 0;
+            }
+            else { return dividend / divisor; }
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            throw new NotImplementedException();
+            var first = nums[0];
+            var last = nums[nums.Length - 1];
+            return last - first;
         }
 
         public int[] GetOddsBelow100()
+
         {
-            throw new NotImplementedException();
+            int[] odds = Enumerable.Range(1, 100).Where(x => x % 2 != 0).ToArray();
+
+            
+
+
+            return odds;
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+
+            for(int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+              
+            }
+           
+
+
         }
     }
 }

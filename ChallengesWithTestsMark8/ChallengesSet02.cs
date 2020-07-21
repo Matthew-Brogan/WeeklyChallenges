@@ -22,7 +22,10 @@ namespace ChallengesWithTestsMark8
             {
                 return true;
             }
-            else { return false; }
+            else 
+            { 
+                return false; 
+            }
         }
 
         public bool IsNumberEven(int number)
@@ -73,7 +76,8 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            if(numbers == null)
+
+            if (numbers == null)
             {
                 return 0;
             }
@@ -81,7 +85,7 @@ namespace ChallengesWithTestsMark8
             {
                 return numbers.Sum();
             }
-            
+
         }
 
         public int SumEvens(int[] numbers)
